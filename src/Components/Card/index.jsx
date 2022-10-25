@@ -1,8 +1,8 @@
 import React from 'react'
-import styled from 'styled-components'
+// import styled from 'styled-components'
 // import colors from '../../utils/style/colors'
-import DefaultPicture from '../../assets/profile.png'
-import PropTypes from 'prop-types'
+// import DefaultPicture from '../../assets/profile.png'
+// import PropTypes from 'prop-types'
 
 // const CardWrapper = styled.div`
 //   display: flex;
@@ -20,26 +20,34 @@ import PropTypes from 'prop-types'
 //   }
 // `
 
-const CardImage = styled.img`
-  height: 150px;
-  width: 150px;
-  align-self: center;
-`
+// const CardImage = styled.img`
+//   height: 150px;
+//   width: 150px;
+//   align-self: center;
+// `
 
-function Card(cover) {
+// const CardTitle = styled.h2`
+//   font-size: 8px;
+// `
+
+const Card= ({cover, title}) => {
   return (
-      <CardImage src={cover} alt="logement" />
+      // <CardImage src={cover} alt="logement" />,
+      // <CardTitle src={title} />
+      <div className='card'>
+        <img src={cover} alt='logement' className='card__img'/>
+        <h2 className='card_title'>{title}</h2>
+      </div>
   )
 }
 
-Card.propTypes = {
-    picture: PropTypes.string.isRequired,
-}
+// Card.propTypes = {
+//     picture: PropTypes.string.isRequired,
+// }
 
-Card.defaultProps = {
-    title: '',
-    label: '',
-    picture: DefaultPicture,
-}
+// Card.defaultProps = {
+//     title: '',
+//     picture: DefaultPicture,
+// }
 
 export default Card
