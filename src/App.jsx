@@ -5,6 +5,7 @@ import House from './pages/House';
 // import { Link } from 'react-router-dom'
 // import styled from 'styled-components'
 import Header from './Components/Header';
+import Footer from './Components/Footer';
 
 
 
@@ -16,6 +17,7 @@ function App() {
         <Route path='/' element={<Home />} />
         <Route path='/house' element={<House />} />
       </Routes>
+      <Footer />
     </div>
   );
 }

@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import React from 'react'
 import { useFetch } from '../../utils/hooks'
 import Card from '../../Components/Card'
+import './home.css'
 
 const CardsContainer = styled.div`
     display: grid;
@@ -18,23 +19,25 @@ function Home() {
       )
 
       const logementList = data?.logementsList
-
+      console.log(logementList)
+      
       if (error) {
         return <span>Oups il y a eu un problème</span>
       }
 
   return (
-    <div>
+    <div className='home'>
         <h1>Home</h1>
         {isLoading ? (
             <h1>Chargement</h1>
             ) : (
         <CardsContainer>
-            {logementList.map((logement) =>(
+            {logementList.map((logements) =>(
                 <Card
-                picture={logement.cover} 
+                picture={logements.cover} 
                 />
             ))}
+            {/* {data?.cover} */}
         </CardsContainer>
         )}
     </div>
