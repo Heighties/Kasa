@@ -26,9 +26,9 @@ const CardImage = styled.img`
   align-self: center;
 `
 
-function Card(picture) {
+function Card(cover) {
   return (
-      <CardImage src={picture} alt="logement" />
+      <CardImage src={cover} alt="logement" />
   )
 }
 
