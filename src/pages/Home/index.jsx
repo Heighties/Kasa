@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import React from 'react'
-import Card from '../../Components/Card'
 import { useFetch } from '../../utils/hooks'
+import Card from '../../Components/Card'
 
 const CardsContainer = styled.div`
     display: grid;
@@ -13,7 +13,7 @@ const CardsContainer = styled.div`
 `
 
 function Home() {
-    const { data, error } = useFetch(
+    const { data, isLoading, error } = useFetch(
         `https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/Front-End+V2/P9+React+1/logements.json`
       )
 
@@ -26,6 +26,9 @@ function Home() {
   return (
     <div>
         <h1>Home</h1>
+        {isLoading ? (
+            <h1>Chargement</h1>
+            ) : (
         <CardsContainer>
             {logementList.map((logement) =>(
                 <Card
@@ -33,6 +36,7 @@ function Home() {
                 />
             ))}
         </CardsContainer>
+        )}
     </div>
   )
 }
