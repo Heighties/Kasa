@@ -5,6 +5,9 @@ import Card from '../../Components/Card'
 import './home.css'
 import logements from '../../datas/data.json'
 import { Link } from "react-router-dom";
+import Banner from '../../Components/Banner'
+import image from '../../assets/IMG.png'
+import stData from '../../datas/stData'
 
 const CardsContainer = styled.div`
     display: grid;
@@ -14,6 +17,10 @@ const CardsContainer = styled.div`
     align-items: center;
     justify-items: center;
 `
+
+const slogan = stData.slogan
+
+
 
 function Home() {
     // const { data, isLoading, error } = useFetch(
@@ -47,6 +54,9 @@ function Home() {
 
     return(
         <div className='home'>
+            <div className='banner__wrapper'>
+            <Banner image={image} title={slogan} className='banner'/>
+            </div>{" "}
             <section className='logements'>
                 {logements.map((logement) => {
                 return (

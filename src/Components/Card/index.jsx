@@ -1,4 +1,5 @@
 import React from 'react'
+import './card.css'
 // import styled from 'styled-components'
 // import colors from '../../utils/style/colors'
 // import DefaultPicture from '../../assets/profile.png'
@@ -36,7 +37,7 @@ const Card= ({cover, title}) => {
       // <CardTitle src={title} />
       <div className='card'>
         <img src={cover} alt='logement' className='card__img'/>
-        <h2 className='card_title'>{title}</h2>
+        <h2 className='card__title'>{title}</h2>
       </div>
   )
 }
