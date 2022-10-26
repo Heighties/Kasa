@@ -6,6 +6,7 @@ import House from './pages/House';
 // import styled from 'styled-components'
 import Header from './Components/Header';
 import Footer from './Components/Footer';
+import About from './pages/About';
 
 
 
@@ -16,6 +17,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/house' element={<House />} />
+        <Route path='/about' element={< About/>} />
       </Routes>
       <Footer />
     </div>

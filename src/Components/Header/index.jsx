@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import LOGO from '../../assets/LOGO.png'
 import { StyledLink } from '../../utils/style/Atom'
 
+
 const HomeLogo = styled.img`
   height: 70px;
 `
