@@ -20,6 +20,20 @@ const CardsContainer = styled.div`
 
 const slogan = stData.slogan
 
+const HomeWrap = styled.div`
+    margin: 0 20%;
+`
+
+const Logements = styled.section`
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 50px;
+    row-gap: 30px;
+    background: lightgray;
+    padding: 50px;
+    border-radius: 20px;
+    margin-bottom: 40px;
+`
 
 
 function Home() {
@@ -53,11 +67,12 @@ function Home() {
 //   )
 
     return(
-        <div className='home'>
+        <HomeWrap>
             <div className='banner__wrapper'>
             <Banner image={image} title={slogan} className='banner'/>
-            </div>{" "}
-            <section className='logements'>
+            </div>
+            {/* <section className='logements'> */}
+            <Logements>
                 {logements.map((logement) => {
                 return (
                     <article key={logement.id}>
@@ -67,8 +82,9 @@ function Home() {
                     </article>
                 )
                 })}
-            </section>
-        </div>
+            </Logements>
+            {/* </section> */}
+        </HomeWrap>
     )
 
 
