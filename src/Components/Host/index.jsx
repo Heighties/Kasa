@@ -1,18 +1,44 @@
 import React from "react";
+import styled from "styled-components";
 
-const Host = ({ host }) => {
+const Wrapper = styled.div`
+  display: flex;
+  justify-content: flex-end ;
+`
+
+const Name = styled.div`
+  font-size: 12px;
+  font-weight: 500;
+  margin-right: 10px;
+`
+
+const Firstname = styled.p`
+  margin: 0;
+  text-align: end;
+`
+
+const Lastname = styled.p`
+  margin: 0;
+  text-align: end;
+`
+const Picture = styled.img`
+  border-radius: 50%;
+  height: 62px;
+  width: 62px;
+`
+
+function Host({ host }){
   const isHostSplited = host.name.split(" ");
   const [name, lastname] = isHostSplited;
 
   return (
-    <div className="host">
-      <div className="host__name">
-        <p className="host__firstname">{name.trim()}</p>
-        <p className="host__lastname">{lastname.trim()}</p>
-      </div>
-
-      <img src={host.picture} alt="" className="host__picture" />
-    </div>
+    <Wrapper>
+      <Name>
+        <Firstname>{name.trim()}</Firstname>
+        <Lastname>{lastname.trim()}</Lastname>
+      </Name>
+      <Picture src={host.picture} alt="" />
+    </Wrapper>
   );
 };
 

@@ -4,8 +4,50 @@ import { useState } from "react";
 //Style
 import arrowLeft from "../../assets/arrowLeft.svg";
 import arrowRight from "../../assets/arrowRight.svg";
+import styled from "styled-components";
+import "./style.scss"
 
-const Slider = ({ slides }) => {
+const Wrapper = styled.div`
+    position: relative;
+`
+
+const SliderPrevious = styled.div`
+    position: absolute;
+    top: 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+`
+
+const SliderNext = styled.div`
+    position: absolute;
+    top: 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    right: 0;
+`
+
+const Picture = styled.img`
+    width: inherit;
+    height: inherit;
+    object-fit: cover;
+    border-radius: 10px;
+`
+
+// const ActivePicture = styled.div`
+//     height: 255px;
+//     width: 2px;
+//     transform: scale(1);
+//     transition: transform 300ms;
+// `
+
+// const InactivePicture = styled.div`
+//     transform: scale(1.05);
+//     transition: transform 300ms;
+// `
+
+function Slider({ slides }){
   const [current, setCurrent] = useState(0);
   const length = slides.length;
 
@@ -18,7 +60,7 @@ const Slider = ({ slides }) => {
   };
 
   return (
-    <div className="slider">
+    <Wrapper>
       {slides.map((picture, index) => {
         return (
           <div
@@ -30,7 +72,8 @@ const Slider = ({ slides }) => {
             }
           >
             {index === current && (
-              <img src={picture} alt="" className="slider__picture" />
+            //   <img src={picture} alt="" className="slider__picture" />
+            <Picture src={picture}/>
             )}
           </div>
         );
@@ -38,15 +81,15 @@ const Slider = ({ slides }) => {
       {/* get button if there are more thant one picture */}
       {length > 1 ? (
         <>
-          <div className="slider__previous" onClick={prevSlide}>
+          <SliderPrevious onClick={prevSlide}>
             <img src={arrowLeft} alt="" className="slider__previous-icon" />
-          </div>
-          <div className="slider__next" onClick={nextSlide}>
+          </SliderPrevious>
+          <SliderNext onClick={nextSlide}>
             <img src={arrowRight} alt="" className="slider__next-icon" />
-          </div>
+          </SliderNext>
         </>
       ) : null}
-    </div>
+    </Wrapper>
   );
 };
 

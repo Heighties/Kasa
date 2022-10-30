@@ -12,7 +12,11 @@ import colors from '../../utils/style/colors';
 
 const Logements = styled.div`
   color: ${colors.primary};
-  margin: 0 5%;
+  margin: 0 20%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  /* width: 50%; */
 `
 
 const Content = styled.div`
@@ -35,6 +39,25 @@ const Location = styled.p`
   font-weight: 500;
 `
 
+const Collapses = styled.div`
+  /* display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 40px;
+  width: 100%; */
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  width: 100%;
+  padding-bottom: 20rem;
+`
+
+const RatingHost = styled.div`
+  margin-top: 5px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+`
+
 function Logement() {
   const { logementId } = useParams();
   const product = logements.find((logement) => logement.id === logementId);
@@ -54,15 +77,15 @@ function Logement() {
             ))}
           </div>
         </Informations>
-        <div className="logement__rating-and-host">
+        <RatingHost>
           <Rating rating={rating} />
           <Host host={host} />
-        </div>
+        </RatingHost>
       </Content>
-      <div className="logement__dropdowns">
+      <Collapses>
         <Collapse title="description" content={description} />
         <Collapse title="équipement" content={equipments} />
-      </div>
+      </Collapses>
     </Logements>
   )
 }

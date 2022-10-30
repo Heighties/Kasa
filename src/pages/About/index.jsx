@@ -6,6 +6,10 @@ import image from '../../assets/mountain.png'
 import styled from 'styled-components';
 
 
+const AboutWrapper = styled.div`
+  margin: 0 20%;
+`
+
 const Wrapper = styled.div`
     display: flex;
     justify-content: center;
@@ -34,7 +38,7 @@ function About () {
   };
 
   return (
-    <div className="about">
+    <AboutWrapper>
       <AboutBanner image={image} />
         <Wrapper>
           <Collapsible title="fiabilité" content={content("fiability")} />
@@ -42,7 +46,7 @@ function About () {
           <Collapsible title="service" content={content("service")} />
           <Collapsible title="sécurité" content={content("security")} />
         </Wrapper>
-    </div>
+    </AboutWrapper>
   );
 };
 

@@ -1,0 +1,11 @@
+.slider__active-picture{
+    height: 455px;
+    width: 100%;
+    transform: scale(1);
+    transition: transform 300ms;
+}
+
+.slider__inactive-picture{
+    transform: scale(1.05);
+    transition: transform 300ms;
+}
