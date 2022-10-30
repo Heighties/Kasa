@@ -3,31 +3,32 @@ import React from "react";
 // style
 import redstar from "../../assets/redStar.svg";
 import greystar from "../../assets/greyStar.svg";
+import styled from "styled-components";
 
-const Rating = ({ rating }) => {
+const Wrapper = styled.div`
+    display: flex;
+    align-items: center;
+`
+
+const Icon = styled.img`
+    margin-right: 5px;
+    height: 30px;
+`
+
+function Rating({ rating }){
   const stars = [1, 2, 3, 4, 5];
 
   return (
-    <div className="rating">
+    <Wrapper>
       {/* Loop to display star by rating */}
       {stars.map((star) =>
         rating >= star ? (
-          <img
-            key={star.toString()}
-            className="rating__icon"
-            src={redstar}
-            alt=""
-          />
+        <Icon key={star.toString()} src={redstar} alt=''/>
         ) : (
-          <img
-            key={star.toString()}
-            className="rating__icon"
-            src={greystar}
-            alt=""
-          />
+        <Icon key={star.toString()} src={greystar} alt=''/>
         )
       )}
-    </div>
+    </Wrapper>
   );
 };
 

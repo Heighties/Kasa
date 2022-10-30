@@ -72,7 +72,7 @@ function Slider({ slides }){
             }
           >
             {index === current && (
-            //   <img src={picture} alt="" className="slider__picture" />
+
             <Picture src={picture}/>
             )}
           </div>
