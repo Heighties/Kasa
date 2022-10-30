@@ -5,7 +5,7 @@ import { useState } from "react";
 import arrowLeft from "../../assets/arrowLeft.svg";
 import arrowRight from "../../assets/arrowRight.svg";
 import styled from "styled-components";
-import "./style.scss"
+import "./style.css"
 
 const Wrapper = styled.div`
     position: relative;
