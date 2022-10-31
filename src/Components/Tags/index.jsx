@@ -9,7 +9,7 @@ const Tag = styled.div`
   padding: 3px 10px;
   margin-right: 10px;
   margin-bottom: 10px;
-  min-width: 68px;
+  /* min-width: 68px; */
   text-align: center;
 `
 const Text = styled.p`

@@ -26,7 +26,10 @@ const Content = styled.div`
   margin-bottom: 15px;
 `
 
-const Informations = styled.div``
+const Informations = styled.div`
+  display: flex;
+  flex-direction: column;
+`
 
 const Title = styled.h1`
   margin: 0;
@@ -51,6 +54,11 @@ const Collapses = styled.div`
   padding-bottom: 20rem;
 `
 
+const TagsWrapper = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+`
+
 const RatingHost = styled.div`
   margin-top: 5px;
   margin-bottom: 20px;
@@ -71,11 +79,11 @@ function Logement() {
         <Informations>
           <Title>{title}</Title>
           <Location>{location}</Location>
-          <div className="logement__tags">
+          <TagsWrapper>
             {product.tags.map((tag, index) => (
               <Tags key={index} getTag={tag} />
             ))}
-          </div>
+          </TagsWrapper>
         </Informations>
         <RatingHost>
           <Rating rating={rating} />
@@ -83,8 +91,8 @@ function Logement() {
         </RatingHost>
       </Content>
       <Collapses>
-        <Collapse title="description" content={description} />
-        <Collapse title="équipement" content={equipments} />
+        <Collapse title="Description" content={description} />
+        <Collapse title="Equipement" content={equipments} />
       </Collapses>
     </Logements>
   )
