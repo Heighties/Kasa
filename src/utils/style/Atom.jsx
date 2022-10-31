@@ -1,6 +1,6 @@
-import { Link } from 'react-router-dom'
-import styled, { keyframes } from 'styled-components'
-import colors from './colors';
+// import { Link } from 'react-router-dom'
+// import styled, { keyframes } from 'styled-components'
+// import colors from './colors';
 
 // export const StyledLink = styled(Link)`
 //   padding: 10px 15px;

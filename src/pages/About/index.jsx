@@ -1,13 +1,14 @@
 import React from 'react'
 import stData from '../../datas/stData';
 import Collapsible from '../../Components/Collapsible';
-import AboutBanner from '../../Components/AboutBanner';
 import image from '../../assets/mountain.png'
 import styled from 'styled-components';
+import Banner from '../../Components/Banner';
 
 
 const AboutWrapper = styled.div`
   margin: 0 20%;
+  min-height: calc(100vh - 304px);
 `
 
 const Wrapper = styled.div`
@@ -16,7 +17,6 @@ const Wrapper = styled.div`
     flex-direction: column;
     align-items: center;
     padding-top: 2rem;
-    padding-bottom: 10rem;
 `
 
 function About () {
@@ -39,7 +39,7 @@ function About () {
 
   return (
     <AboutWrapper>
-      <AboutBanner image={image} />
+      <Banner image={image}/>
         <Wrapper>
           <Collapsible title="fiabilité" content={content("fiability")} />
           <Collapsible title="respect" content={content("respect")} />

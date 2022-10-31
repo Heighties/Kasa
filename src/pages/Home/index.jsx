@@ -1,22 +1,21 @@
 import styled from 'styled-components'
 import React from 'react'
-import { useFetch } from '../../utils/hooks'
+// import { useFetch } from '../../utils/hooks'
 import Card from '../../Components/Card'
-import './home.css'
 import logements from '../../datas/data.json'
 import { Link } from "react-router-dom";
 import Banner from '../../Components/Banner'
 import image from '../../assets/IMG.png'
 import stData from '../../datas/stData'
 
-const CardsContainer = styled.div`
-    display: grid;
-    gap: 24px;
-    grid-template-rows: 350px 350px;
-    grid-template-columns: repeat(2, 1fr);
-    align-items: center;
-    justify-items: center;
-`
+// const CardsContainer = styled.div`
+//     display: grid;
+//     gap: 24px;
+//     grid-template-rows: 350px 350px;
+//     grid-template-columns: repeat(2, 1fr);
+//     align-items: center;
+//     justify-items: center;
+// `
 
 const slogan = stData.slogan
 

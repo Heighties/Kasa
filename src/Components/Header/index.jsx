@@ -34,7 +34,7 @@ const StyledLink = styled(Link)`
 
 function Header() {
   return (
-    <NavContainer >
+    <NavContainer>
     <Link to="/"><HomeLogo src={LOGO} /></Link>
     <div>
     <StyledLink to="/">Acceuil</StyledLink>
