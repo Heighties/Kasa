@@ -2,12 +2,12 @@ import React from 'react'
 import {Routes, Route} from 'react-router-dom'
 import Home from './pages/Home'
 import Logement from './pages/Logement';
-// import { Link } from 'react-router-dom'
-// import styled from 'styled-components'
 import Header from './Components/Header';
 import Footer from './Components/Footer';
 import About from './pages/About';
 import Error from './pages/Error';
+
+import './main.css'
 
 
 function App() {

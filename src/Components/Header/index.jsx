@@ -2,7 +2,8 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import LOGO from '../../assets/LOGO.png'
-import { StyledLink } from '../../utils/style/Atom'
+// import { StyledLink } from '../../utils/style/Atom'
+import colors from '../../utils/style/colors'
 
 
 const HomeLogo = styled.img`
@@ -19,13 +20,25 @@ const NavContainer = styled.nav`
   padding-bottom: 40px;
 `
 
+const StyledLink = styled(Link)`
+  cursor: pointer;
+  padding: 10px 15px;
+  text-decoration: none;
+  font-size: 18px;
+  text-align: center;
+  color: ${colors.primary};
+  &:focus{
+    text-decoration: underline;
+  }
+`
+
 function Header() {
   return (
     <NavContainer >
     <Link to="/"><HomeLogo src={LOGO} /></Link>
     <div>
     <StyledLink to="/">Acceuil</StyledLink>
-    <StyledLink to="/about">A propos</StyledLink>
+    <StyledLink to="/about">A Propos</StyledLink>
     </div>
     </NavContainer>
   )
