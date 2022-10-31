@@ -12,7 +12,7 @@ const Wrapper = styled.div`
 
 const Icon = styled.img`
     margin-right: 5px;
-    height: 30px;
+    height: 25px;
 `
 
 function Rating({ rating }){

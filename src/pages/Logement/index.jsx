@@ -42,6 +42,11 @@ const Location = styled.p`
   font-weight: 500;
 `
 
+const TagsWrapper = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+`
+
 const Collapses = styled.div`
   /* display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -54,16 +59,13 @@ const Collapses = styled.div`
   padding-bottom: 20rem;
 `
 
-const TagsWrapper = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-`
-
 const RatingHost = styled.div`
   margin-top: 5px;
   margin-bottom: 20px;
   display: flex;
   justify-content: space-between;
+  flex-direction: column-reverse;
+  gap: 2rem;
 `
 
 function Logement() {

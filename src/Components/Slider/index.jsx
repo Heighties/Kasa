@@ -17,6 +17,8 @@ const SliderPrevious = styled.div`
     height: 100%;
     display: flex;
     align-items: center;
+    cursor: pointer;
+    margin-left: 20px;
 `
 
 const SliderNext = styled.div`
@@ -26,6 +28,8 @@ const SliderNext = styled.div`
     display: flex;
     align-items: center;
     right: 0;
+    cursor: pointer;
+    margin-right: 20px;
 `
 
 const Picture = styled.img`

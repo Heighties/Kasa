@@ -13,6 +13,7 @@ const Name = styled.div`
 `
 
 const Firstname = styled.p`
+  padding-top: 15.5px;
   margin: 0;
   text-align: end;
 `
