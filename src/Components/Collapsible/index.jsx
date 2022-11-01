@@ -1,6 +1,7 @@
 import React from 'react';
 import useCollapse from 'react-collapsed';
 import styled from 'styled-components'
+import colors from '../../utils/style/colors';
 
 
 const Collapse = styled.div`
@@ -10,10 +11,10 @@ const Collapse = styled.div`
 const CollapseContent = styled.div`
     padding: 6px;
     background-color: #F6F6F6;
-    color : #FF6060;
+    color : ${colors.primary};
 `
 const CollapseHeader = styled.div`
-    background-color: #FF6060;
+    background-color: ${colors.primary};
     padding: 6px;
     cursor: pointer;
     color: white;

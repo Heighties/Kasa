@@ -8,6 +8,7 @@ import Tags from '../../Components/Tags'
 import Host from '../../Components/Host';
 import styled from 'styled-components';
 import colors from '../../utils/style/colors';
+import Error from '../Error';
 
 
 const Logements = styled.div`
@@ -71,6 +72,11 @@ const RatingHost = styled.div`
 function Logement() {
   const { logementId } = useParams();
   const product = logements.find((logement) => logement.id === logementId);
+  if(!product){
+    return(
+      <Error />
+    )
+  }
   const { title, location, rating, host, equipments, description, pictures } =
     product
 
