@@ -3,12 +3,13 @@ import { useParams } from "react-router-dom";
 import Rating from "../../Components/Rating"
 import Slider from "../../Components/Slider"
 import Collapse from "../../Components/Collapsible"
-import logements from '../../datas/data.json'
+// import logements from '../../datas/data.json'
 import Tags from '../../Components/Tags'
 import Host from '../../Components/Host';
 import styled from 'styled-components';
 import colors from '../../utils/style/colors';
 import Error from '../Error';
+import { useFetch } from '../../utils/hooks';
 
 
 const Logements = styled.div`
@@ -70,40 +71,85 @@ const RatingHost = styled.div`
 `
 
 function Logement() {
-  const { logementId } = useParams();
-  const product = logements.find((logement) => logement.id === logementId);
-  if(!product){
-    return(
-      <Error />
-    )
-  }
-  const { title, location, rating, host, equipments, description, pictures } =
-    product
+
+  const {logementId} = useParams()
+  
+
+  const { data: logement, isLoading, error } = useFetch(
+    `http://localhost:8000/api/logements/${logementId}`
+  )
+
+
+  if (isLoading) return <h1>LOADING...</h1>
+
+  if (error) {
+      return(
+        <Error />
+        )
+    }
 
   return (
     <Logements>
-      <Slider slides={pictures} />
+      <Slider slides={logement.pictures} />
       <Content>
         <Informations>
-          <Title>{title}</Title>
-          <Location>{location}</Location>
+          <Title>{logement.title}</Title>
+          <Location>{logement.location}</Location>
           <TagsWrapper>
-            {product.tags.map((tag, index) => (
+            {logement.tags.map((tag, index) => (
               <Tags key={index} getTag={tag} />
             ))}
           </TagsWrapper>
         </Informations>
         <RatingHost>
-          <Rating rating={rating} />
-          <Host host={host} />
+          <Rating rating={logement.rating} />
+          <Host host={logement.host} />
         </RatingHost>
       </Content>
       <Collapses>
-        <Collapse title="Description" content={description} />
-        <Collapse title="Equipement" content={equipments} />
+        <Collapse title="Description" content={logement.description} />
+        <Collapse title="Equipement" content={logement.equipments} />
       </Collapses>
     </Logements>
   )
 }
+
+
+// function Logement() {
+//   const { logementId } = useParams();
+//   const product = logements.find((logement) => logement.id === logementId);
+//   if(!product){
+//     return(
+//       <Error />
+//     )
+//   }
+//   const { title, location, rating, host, equipments, description, pictures } =
+//     product
+
+//   return (
+//     <Logements>
+//       <Slider slides={pictures} />
+//       <Content>
+//         <Informations>
+//           <Title>{title}</Title>
+//           <Location>{location}</Location>
+//           <TagsWrapper>
+//             {product.tags.map((tag, index) => (
+//               <Tags key={index} getTag={tag} />
+//             ))}
+//           </TagsWrapper>
+//         </Informations>
+//         <RatingHost>
+//           <Rating rating={rating} />
+//           <Host host={host} />
+//         </RatingHost>
+//       </Content>
+//       <Collapses>
+//         <Collapse title="Description" content={description} />
+//         <Collapse title="Equipement" content={equipments} />
+//       </Collapses>
+//     </Logements>
+//   )
+// }
 
 export default Logement

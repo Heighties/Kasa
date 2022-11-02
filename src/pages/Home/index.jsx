@@ -62,7 +62,7 @@ return(
                 console.log(logement._id)
             return (
                 <article key={logement.id}>
-                    <Link to={`/logement/${logement.id}`}>
+                    <Link to={`/logement/${logement._id}`}>
                         <Card cover={logement.cover} title={logement.title} />
                     </Link>
                 </article>
