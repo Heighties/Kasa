@@ -26,6 +26,10 @@ const Content = styled.div`
   display: flex;
   justify-content: space-between;
   margin-bottom: 15px;
+  @media screen and (max-width: 960px){
+        width: 100%;
+        flex-direction: column;
+    }
 `
 
 const Informations = styled.div`
@@ -59,6 +63,9 @@ const Collapses = styled.div`
   gap: 40px;
   width: 100%;
   padding-bottom: 20rem;
+  @media screen and (max-width: 960px){
+        flex-direction: column;
+    }
 `
 
 const RatingHost = styled.div`
@@ -68,6 +75,10 @@ const RatingHost = styled.div`
   justify-content: space-between;
   flex-direction: column-reverse;
   gap: 2rem;
+  @media screen and (max-width: 960px){
+        width: 100%;
+        flex-direction: row;
+    }
 `
 
 function Logement() {
@@ -87,6 +98,23 @@ function Logement() {
         <Error />
         )
     }
+    // const product = logement.find((logement) => logement.id === logementId);
+
+    // if(!product){
+    //       return(
+    //         <Error />
+    //       )
+    //     }
+
+  // const { logementId } = useParams();
+  // const product = logements.find((logement) => logement.id === logementId);
+  // if(!product){
+  //   return(
+  //     <Error />
+  //   )
+  // }
+  // const { title, location, rating, host, equipments, description, pictures } =
+  //   product
 
   return (
     <Logements>

@@ -2,12 +2,16 @@ import React from 'react'
 import styled from 'styled-components'
 
 const Container = styled.div`
-  width: 100%;
-  height: 150px;
+  width: 1240px;
+  height: 223px;
   position: relative;
   margin-bottom: 20px;
   border-radius: 10px;
   overflow: hidden;
+  @media screen and (max-width: 960px){
+        width: 100%;
+        height: 111px;
+    }
 `
 
 const Image = styled.img`

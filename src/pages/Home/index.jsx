@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+// import styled from 'styled-components'
 import React from 'react'
 import { useFetch } from '../../utils/hooks'
 import Card from '../../Components/Card'
@@ -6,34 +6,10 @@ import Card from '../../Components/Card'
 import { Link } from "react-router-dom";
 import Banner from '../../Components/Banner'
 import image from '../../assets/IMG.png'
-import stData from '../../datas/stData'
+// import stData from '../../datas/stData'
 import Error from '../Error';
+import { HomeWrap, Logements, Slogan, CardWrapper, Wrapper } from './style';
 
-// const CardsContainer = styled.div`
-//     display: grid;
-//     gap: 24px;
-//     grid-template-rows: 350px 350px;
-//     grid-template-columns: repeat(2, 1fr);
-//     align-items: center;
-//     justify-items: center;
-// `
-
-const slogan = stData.slogan
-
-const HomeWrap = styled.div`
-    margin: 0 20%;
-`
-
-const Logements = styled.section`
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    column-gap: 50px;
-    row-gap: 30px;
-    background: lightgray;
-    padding: 50px;
-    border-radius: 20px;
-    margin-bottom: 40px;
-`
 
 
 function Home() {
@@ -52,25 +28,26 @@ function Home() {
 console.log(logementList)
 
 return(
+    <Wrapper>
+        <Banner image={image} title={Slogan} className='banner'/>
     <HomeWrap>
-        <div className='banner__wrapper'>
-        <Banner image={image} title={slogan} className='banner'/>
-        </div>
+        
         {/* <section className='logements'> */}
         <Logements>
             {logementList.map((logement) => {
                 console.log(logement._id)
             return (
-                <article key={logement.id}>
+                <CardWrapper key={logement.id}>
                     <Link to={`/logement/${logement._id}`}>
                         <Card cover={logement.cover} title={logement.title} />
                     </Link>
-                </article>
+                </CardWrapper>
             )
             })}
         </Logements>
         {/* </section> */}
     </HomeWrap>
+    </Wrapper>
 )
 
     // return(

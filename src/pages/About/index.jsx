@@ -6,17 +6,31 @@ import styled from 'styled-components';
 import Banner from '../../Components/Banner';
 
 
+const Container = styled.div`
+  display: flex;
+  justify-content: center; 
+  @media screen and (max-width: 960px){
+        flex-direction: column;
+        width: 100vh;
+    }
+`
+
 const AboutWrapper = styled.div`
-  margin: 0 20%;
-  min-height: calc(100vh - 304px);
+  /* min-height: calc(100vh - 304px); */
 `
 
 const Wrapper = styled.div`
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 2rem;
+  display: flex;
+  /* justify-content: center; */
+  flex-direction: column;
+  align-items: center;
+  padding-top: 2rem;
+  height: 20rem;
+  padding-bottom: 10rem;
+  @media screen and (max-width: 960px){
+        flex-direction: column;
+        width: 100%;
+    }
 `
 
 function About () {
@@ -38,6 +52,7 @@ function About () {
   };
 
   return (
+    <Container>
     <AboutWrapper>
       <Banner image={image}/>
         <Wrapper>
@@ -47,6 +62,7 @@ function About () {
           <Collapsible title="sécurité" content={content("security")} />
         </Wrapper>
     </AboutWrapper>
+    </Container>
   );
 };
 

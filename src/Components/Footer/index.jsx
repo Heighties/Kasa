@@ -12,6 +12,9 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   flex-direction: column;
+  @media screen and (max-width: 960px){
+        width: 100%;
+    }
 `
 
 const FooterLogo = styled.img`
