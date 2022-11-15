@@ -1,0 +1,67 @@
+.collapse__title{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #FF6060;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 6px;
+}
+
+.collapse__content{
+    background: #f6f6f6;
+    color: #FF6060;
+    visibility: hidden;
+    height: 0;
+    opacity: 0;
+    overflow: hidden;
+    padding: 0 1rem;
+    transition: all .2s ease-in;
+}
+
+.active .collapse__content {
+    visibility: visible;
+    height: auto;
+    overflow: visible;
+    padding: 1rem;
+    opacity: 1;
+  }
+
+/* .collapse__icon{
+    position: relative;
+    width: 10px;
+    height: 1px;
+    background: white;
+}
+
+.collapse__icon::before{
+    position: absolute;
+    content: "";
+    width: 10px;
+    height: 1px;
+    background: white;
+    transform: rotate(90deg);
+    transition: all .2s;
+}
+
+.active .collapse__icon::before{
+    transform: rotate(0deg);
+    opacity: 0;
+} */
+
+.vector{
+    position: relative;
+}
+
+.vector::before{
+    position: absolute;
+    transform: rotate(180deg);
+    transition: all .2s;
+}
+
+.active .vector::before{
+    transform: rotate(0deg);
+    /* opacity: 0; */
+}
+

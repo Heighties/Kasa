@@ -1,16 +1,16 @@
-import React from 'react'
+import React from "react";
 import { useParams } from "react-router-dom";
-import Rating from "../../Components/Rating"
-import Slider from "../../Components/Slider"
-import Collapse from "../../Components/Collapsible"
+import Rating from "../../Components/Rating";
+import Slider from "../../Components/Slider";
+import Collapse from "../../Components/Collapsible";
 // import logements from '../../datas/data.json'
-import Tags from '../../Components/Tags'
-import Host from '../../Components/Host';
-import styled from 'styled-components';
-import colors from '../../utils/style/colors';
-import Error from '../Error';
-import { useFetch } from '../../utils/hooks';
-
+import Tags from "../../Components/Tags";
+import Host from "../../Components/Host";
+import styled from "styled-components";
+import colors from "../../utils/style/colors";
+import Error from "../Error";
+import { useFetch } from "../../utils/hooks";
+import Accordion from "../../Accordion";
 
 const Logements = styled.div`
   color: ${colors.primary};
@@ -19,39 +19,39 @@ const Logements = styled.div`
   justify-content: center;
   flex-direction: column;
   /* width: 50%; */
-`
+`;
 
 const Content = styled.div`
   margin-top: 20px;
   display: flex;
   justify-content: space-between;
   margin-bottom: 15px;
-  @media screen and (max-width: 960px){
-        width: 100%;
-        flex-direction: column;
-    }
-`
+  @media screen and (max-width: 960px) {
+    width: 100%;
+    flex-direction: column;
+  }
+`;
 
 const Informations = styled.div`
   display: flex;
   flex-direction: column;
-`
+`;
 
 const Title = styled.h1`
   margin: 0;
-  font-size:  18px;
+  font-size: 18px;
   font-weight: 500;
-`
+`;
 
 const Location = styled.p`
   font-size: 14px;
   font-weight: 500;
-`
+`;
 
 const TagsWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
-`
+`;
 
 const Collapses = styled.div`
   /* display: grid;
@@ -63,10 +63,10 @@ const Collapses = styled.div`
   gap: 40px;
   width: 100%;
   padding-bottom: 20rem;
-  @media screen and (max-width: 960px){
-        flex-direction: column;
-    }
-`
+  @media screen and (max-width: 960px) {
+    flex-direction: column;
+  }
+`;
 
 const RatingHost = styled.div`
   margin-top: 5px;
@@ -75,36 +75,33 @@ const RatingHost = styled.div`
   justify-content: space-between;
   flex-direction: column-reverse;
   gap: 2rem;
-  @media screen and (max-width: 960px){
-        width: 100%;
-        flex-direction: row;
-    }
-`
+  @media screen and (max-width: 960px) {
+    width: 100%;
+    flex-direction: row;
+  }
+`;
 
 function Logement() {
+  const { logementId } = useParams();
 
-  const {logementId} = useParams()
-  
+  const {
+    data: logement,
+    isLoading,
+    error,
+  } = useFetch(`http://localhost:8000/api/logements/${logementId}`);
 
-  const { data: logement, isLoading, error } = useFetch(
-    `http://localhost:8000/api/logements/${logementId}`
-  )
-
-
-  if (isLoading) return <h1>LOADING...</h1>
+  if (isLoading) return <h1>LOADING...</h1>;
 
   if (error) {
-      return(
-        <Error />
-        )
-    }
-    // const product = logement.find((logement) => logement.id === logementId);
+    return <Error />;
+  }
+  // const product = logement.find((logement) => logement.id === logementId);
 
-    // if(!product){
-    //       return(
-    //         <Error />
-    //       )
-    //     }
+  // if(!product){
+  //       return(
+  //         <Error />
+  //       )
+  //     }
 
   // const { logementId } = useParams();
   // const product = logements.find((logement) => logement.id === logementId);
@@ -135,49 +132,11 @@ function Logement() {
         </RatingHost>
       </Content>
       <Collapses>
-        <Collapse title="Description" content={logement.description} />
-        <Collapse title="Equipement" content={logement.equipments} />
+        <Accordion title="Description" content={logement.description} />
+        <Accordion title="Equipement" content={logement.equipments} />
       </Collapses>
     </Logements>
-  )
+  );
 }
 
-
-// function Logement() {
-//   const { logementId } = useParams();
-//   const product = logements.find((logement) => logement.id === logementId);
-//   if(!product){
-//     return(
-//       <Error />
-//     )
-//   }
-//   const { title, location, rating, host, equipments, description, pictures } =
-//     product
-
-//   return (
-//     <Logements>
-//       <Slider slides={pictures} />
-//       <Content>
-//         <Informations>
-//           <Title>{title}</Title>
-//           <Location>{location}</Location>
-//           <TagsWrapper>
-//             {product.tags.map((tag, index) => (
-//               <Tags key={index} getTag={tag} />
-//             ))}
-//           </TagsWrapper>
-//         </Informations>
-//         <RatingHost>
-//           <Rating rating={rating} />
-//           <Host host={host} />
-//         </RatingHost>
-//       </Content>
-//       <Collapses>
-//         <Collapse title="Description" content={description} />
-//         <Collapse title="Equipement" content={equipments} />
-//       </Collapses>
-//     </Logements>
-//   )
-// }
-
-export default Logement
+export default Logement;

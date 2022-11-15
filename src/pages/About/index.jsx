@@ -1,9 +1,9 @@
 import React from "react";
 import stData from "../../datas/stData";
-import Collapsible from "../../Components/Collapsible";
 import image from "../../assets/mountain.png";
 import styled from "styled-components";
 import Banner from "../../Components/Banner";
+import Accordion from "../../Accordion";
 
 const Container = styled.div`
   display: flex;
@@ -61,10 +61,10 @@ function About() {
       <AboutWrapper>
         <Banner image={image} />
         <Wrapper>
-          <Collapsible title="fiabilité" content={content("fiability")} />
-          <Collapsible title="respect" content={content("respect")} />
-          <Collapsible title="service" content={content("service")} />
-          <Collapsible title="sécurité" content={content("security")} />
+          <Accordion title="fiabilité" content={content("fiability")} />
+          <Accordion title="respect" content={content("respect")} />
+          <Accordion title="service" content={content("service")} />
+          <Accordion title="sécurité" content={content("security")} />
         </Wrapper>
       </AboutWrapper>
     </Container>
