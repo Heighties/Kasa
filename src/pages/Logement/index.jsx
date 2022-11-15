@@ -14,11 +14,11 @@ import Accordion from "../../Accordion";
 
 const Logements = styled.div`
   color: ${colors.primary};
-  margin: 0 20%;
-  display: flex;
+  /* margin: 0 20%; */
+  /* display: flex;
   justify-content: center;
-  flex-direction: column;
-  /* width: 50%; */
+  flex-direction: column; */
+  align-self: center;
 `;
 
 const Content = styled.div`

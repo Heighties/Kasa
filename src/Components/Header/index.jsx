@@ -13,6 +13,10 @@ const Wrapper = styled.div`
 
 const HomeLogo = styled.img`
   height: 70px;
+  @media screen and (max-width: 960px) {
+    width: 130px;
+    height: 40px;
+  }
 `;
 
 const NavContainer = styled.nav`
@@ -26,15 +30,6 @@ const NavContainer = styled.nav`
     width: 100%;
   }
 `;
-
-// const StyledLink = styled(Link)`
-//   cursor: pointer;
-//   padding: 10px 15px;
-//   text-decoration: none;
-//   font-size: 18px;
-//   text-align: center;
-//   color: ${colors.primary};
-// `;
 
 const CustomLink = ({ href, children, ...props }) => {
   const path = window.location.pathname;

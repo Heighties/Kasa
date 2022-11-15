@@ -4,6 +4,7 @@ import image from "../../assets/mountain.png";
 import styled from "styled-components";
 import Banner from "../../Components/Banner";
 import Accordion from "../../Accordion";
+import "./about.css";
 
 const Container = styled.div`
   display: flex;
@@ -20,6 +21,7 @@ const AboutWrapper = styled.div`
   justify-content: center;
   flex-direction: column;
   align-items: center;
+  width: 100vh;
 `;
 
 const Wrapper = styled.div`
@@ -57,17 +59,21 @@ function About() {
   };
 
   return (
-    <Container>
-      <AboutWrapper>
-        <Banner image={image} />
-        <Wrapper>
-          <Accordion title="fiabilité" content={content("fiability")} />
-          <Accordion title="respect" content={content("respect")} />
-          <Accordion title="service" content={content("service")} />
-          <Accordion title="sécurité" content={content("security")} />
-        </Wrapper>
-      </AboutWrapper>
-    </Container>
+    // <Container>
+    <div className="about">
+      {/* <AboutWrapper> */}
+      <Banner image={image} />
+      {/* <Wrapper> */}
+      <div className="collapses">
+        <Accordion title="fiabilité" content={content("fiability")} />
+        <Accordion title="respect" content={content("respect")} />
+        <Accordion title="service" content={content("service")} />
+        <Accordion title="sécurité" content={content("security")} />
+      </div>
+      {/* </Wrapper> */}
+      {/* </AboutWrapper> */}
+    </div>
+    // </Container>
   );
 }
 

@@ -5,39 +5,44 @@ import { useState } from "react";
 import arrowLeft from "../../assets/arrowLeft.svg";
 import arrowRight from "../../assets/arrowRight.svg";
 import styled from "styled-components";
-import "./style.css"
+import "./style.css";
 
 const Wrapper = styled.div`
-    position: relative;
-`
+  position: relative;
+  @media screen and (max-width: 960px) {
+    /* width: 5rem; */
+    height: 25%;
+    width: 20rem;
+  }
+`;
 
 const SliderPrevious = styled.div`
-    position: absolute;
-    top: 0;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-    margin-left: 20px;
-`
+  position: absolute;
+  top: 0;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  margin-left: 20px;
+`;
 
 const SliderNext = styled.div`
-    position: absolute;
-    top: 0;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    right: 0;
-    cursor: pointer;
-    margin-right: 20px;
-`
+  position: absolute;
+  top: 0;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  right: 0;
+  cursor: pointer;
+  margin-right: 20px;
+`;
 
 const Picture = styled.img`
-    width: inherit;
-    height: inherit;
-    object-fit: cover;
-    border-radius: 10px;
-`
+  width: inherit;
+  height: inherit;
+  object-fit: cover;
+  border-radius: 10px;
+`;
 
 // const ActivePicture = styled.div`
 //     height: 255px;
@@ -51,7 +56,7 @@ const Picture = styled.img`
 //     transition: transform 300ms;
 // `
 
-function Slider({ slides }){
+function Slider({ slides }) {
   const [current, setCurrent] = useState(0);
   const length = slides.length;
 
@@ -75,10 +80,7 @@ function Slider({ slides }){
                 : "slide slider__inactive-picture"
             }
           >
-            {index === current && (
-
-            <Picture src={picture}/>
-            )}
+            {index === current && <Picture src={picture} />}
           </div>
         );
       })}
@@ -95,6 +97,6 @@ function Slider({ slides }){
       ) : null}
     </Wrapper>
   );
-};
+}
 
 export default Slider;
