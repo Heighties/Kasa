@@ -1,9 +1,9 @@
 import React from "react";
-import { Link, NavLink } from "react-router-dom";
+// import { Link, NavLink } from "react-router-dom";
 import styled from "styled-components";
 import LOGO from "../../assets/LOGO.png";
 // import { StyledLink } from '../../utils/style/Atom'
-import colors from "../../utils/style/colors";
+// import colors from "../../utils/style/colors";
 import "./style.css";
 
 const Wrapper = styled.div`
@@ -27,17 +27,14 @@ const NavContainer = styled.nav`
   }
 `;
 
-const StyledLink = styled(Link)`
-  cursor: pointer;
-  padding: 10px 15px;
-  text-decoration: none;
-  font-size: 18px;
-  text-align: center;
-  color: ${colors.primary};
-  /* &:focus{
-    text-decoration: underline;
-  } */
-`;
+// const StyledLink = styled(Link)`
+//   cursor: pointer;
+//   padding: 10px 15px;
+//   text-decoration: none;
+//   font-size: 18px;
+//   text-align: center;
+//   color: ${colors.primary};
+// `;
 
 const CustomLink = ({ href, children, ...props }) => {
   const path = window.location.pathname;
@@ -57,7 +54,7 @@ function Header() {
         <HomeLogo src={LOGO} />
         <div className="nav">
           <CustomLink href="/">Accueil</CustomLink>
-          <CustomLink href="/about">About</CustomLink>
+          <CustomLink href="/about">A Propos</CustomLink>
         </div>
       </NavContainer>
     </Wrapper>
