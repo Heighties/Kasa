@@ -9,9 +9,11 @@ import Host from "../../Components/Host";
 // import styled from "styled-components";
 // import colors from "../../utils/style/colors";
 import Error from "../Error";
-import { useFetch } from "../../utils/hooks";
-import Accordion from "../../Accordion";
+
+import Accordion from "../../Components/Accordion";
 import "./logement.css";
+import { useFetch } from "../../utils/hooks";
+// import "../../__mock__/db.json"
 
 function Logement() {
   const { logementId } = useParams();
@@ -27,23 +29,6 @@ function Logement() {
   if (error) {
     return <Error />;
   }
-  // const product = logement.find((logement) => logement.id === logementId);
-
-  // if(!product){
-  //       return(
-  //         <Error />
-  //       )
-  //     }
-
-  // const { logementId } = useParams();
-  // const product = logements.find((logement) => logement.id === logementId);
-  // if(!product){
-  //   return(
-  //     <Error />
-  //   )
-  // }
-  // const { title, location, rating, host, equipments, description, pictures } =
-  //   product
 
   return (
     <div className="logements">

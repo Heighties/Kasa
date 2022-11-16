@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import "./accordion.css";
-import image from "../assets/VectorB.png";
+import image from "../../assets/VectorB.png";
 
 function Accordion({ title, content }) {
   const [active, setActive] = useState(false);

@@ -1,77 +1,51 @@
 // import styled from 'styled-components'
-import React from 'react'
-import { useFetch } from '../../utils/hooks'
-import Card from '../../Components/Card'
+import React from "react";
+
+import Card from "../../Components/Card";
 // import logements from '../../datas/data.json'
 import { Link } from "react-router-dom";
-import Banner from '../../Components/Banner'
-import image from '../../assets/IMG.png'
+import Banner from "../../Components/Banner";
+import image from "../../assets/IMG.png";
 // import stData from '../../datas/stData'
-import Error from '../Error';
-import { HomeWrap, Logements, Slogan, CardWrapper, Wrapper } from './style';
-
-
+import Error from "../Error";
+import { HomeWrap, Logements, Slogan, CardWrapper, Wrapper } from "./style";
+import { useFetch } from "../../utils/hooks";
+// import "../../__mock__/db.json"
 
 function Home() {
-    const { data: logementList, isLoading, error } = useFetch(
-        `http://localhost:8000/api/logements`
-      )
-      
-    if (isLoading) return <h1>LOADING...</h1>
+  const {
+    data: logementList,
+    isLoading,
+    error,
+  } = useFetch(`http://localhost:8000/api/logements`);
 
-    if (error) {
-        return(
-            <Error />
-          )
-      }
+  if (isLoading) return <h1>LOADING...</h1>;
 
-console.log(logementList)
+  if (error) {
+    return <Error />;
+  }
 
-return(
+  console.log(logementList);
+
+  return (
     <Wrapper>
-        <Banner image={image} title={Slogan} className='banner'/>
-    <HomeWrap>
-        
-        {/* <section className='logements'> */}
+      <Banner image={image} title={Slogan} className="banner" />
+      <HomeWrap>
         <Logements>
-            {logementList.map((logement) => {
-                console.log(logement._id)
+          {logementList.map((logement) => {
+            console.log(logement._id);
             return (
-                <CardWrapper key={logement.id}>
-                    <Link to={`/logement/${logement._id}`}>
-                        <Card cover={logement.cover} title={logement.title} />
-                    </Link>
-                </CardWrapper>
-            )
-            })}
+              <CardWrapper key={logement.id}>
+                <Link to={`/logement/${logement._id}`}>
+                  <Card cover={logement.cover} title={logement.title} />
+                </Link>
+              </CardWrapper>
+            );
+          })}
         </Logements>
-        {/* </section> */}
-    </HomeWrap>
+      </HomeWrap>
     </Wrapper>
-)
-
-    // return(
-    //     <HomeWrap>
-    //         <div className='banner__wrapper'>
-    //         <Banner image={image} title={slogan} className='banner'/>
-    //         </div>
-    //         {/* <section className='logements'> */}
-    //         <Logements>
-    //             {logements.map((logement) => {
-    //             return (
-    //                 <article key={logement.id}>
-    //                     <Link to={`/logement/${logement.id}`}>
-    //                         <Card cover={logement.cover} title={logement.title} />
-    //                     </Link>
-    //                 </article>
-    //             )
-    //             })}
-    //         </Logements>
-    //         {/* </section> */}
-    //     </HomeWrap>
-    // )
-
-
+  );
 }
 
-export default Home
+export default Home;

@@ -3,7 +3,7 @@ import stData from "../../datas/stData";
 import image from "../../assets/mountain.png";
 import styled from "styled-components";
 import Banner from "../../Components/Banner";
-import Accordion from "../../Accordion";
+import Accordion from "../../Components/Accordion";
 import "./about.css";
 
 const Container = styled.div`
