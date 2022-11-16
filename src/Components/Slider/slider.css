@@ -1,0 +1,45 @@
+.wrapper{
+    position: relative;
+    width: 1240px;
+}
+
+.picture{
+    width: inherit;
+    height: inherit;
+    object-fit: cover;
+    border-radius: 10px; 
+}
+
+
+.slider__active-picture{
+    height: 455px;
+    width: 100%;
+}
+
+.slider__previous{
+    position: absolute;
+    top: 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin-left: 20px;
+}
+
+.slider__next{
+    position: absolute;
+    top: 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    right: 0;
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+@media screen and (max-width: 960px) {
+    .wrapper{
+        height: 25%;
+        width: 335px;
+    }
+  }

@@ -4,45 +4,7 @@ import { useState } from "react";
 //Style
 import arrowLeft from "../../assets/arrowLeft.svg";
 import arrowRight from "../../assets/arrowRight.svg";
-import styled from "styled-components";
-import "./style.css";
-
-const Wrapper = styled.div`
-  position: relative;
-  @media screen and (max-width: 960px) {
-    /* width: 5rem; */
-    height: 25%;
-    width: 20rem;
-  }
-`;
-
-const SliderPrevious = styled.div`
-  position: absolute;
-  top: 0;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-  margin-left: 20px;
-`;
-
-const SliderNext = styled.div`
-  position: absolute;
-  top: 0;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  right: 0;
-  cursor: pointer;
-  margin-right: 20px;
-`;
-
-const Picture = styled.img`
-  width: inherit;
-  height: inherit;
-  object-fit: cover;
-  border-radius: 10px;
-`;
+import "./slider.css";
 
 // const ActivePicture = styled.div`
 //     height: 255px;
@@ -69,7 +31,7 @@ function Slider({ slides }) {
   };
 
   return (
-    <Wrapper>
+    <div className="wrapper">
       {slides.map((picture, index) => {
         return (
           <div
@@ -80,22 +42,24 @@ function Slider({ slides }) {
                 : "slide slider__inactive-picture"
             }
           >
-            {index === current && <Picture src={picture} />}
+            {index === current && (
+              <img className="picture" alt="" src={picture} />
+            )}
           </div>
         );
       })}
       {/* get button if there are more thant one picture */}
       {length > 1 ? (
         <>
-          <SliderPrevious onClick={prevSlide}>
+          <div className="slider__previous" onClick={prevSlide}>
             <img src={arrowLeft} alt="" className="slider__previous-icon" />
-          </SliderPrevious>
-          <SliderNext onClick={nextSlide}>
+          </div>
+          <div className="slider__next" onClick={nextSlide}>
             <img src={arrowRight} alt="" className="slider__next-icon" />
-          </SliderNext>
+          </div>
         </>
       ) : null}
-    </Wrapper>
+    </div>
   );
 }
 
