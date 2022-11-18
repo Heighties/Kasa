@@ -59,6 +59,13 @@ function Slider({ slides }) {
           </div>
         </>
       ) : null}
+      {length > 1 ? (
+        <div className="slider__counter">
+          {current + 1}/{length}
+        </div>
+      ) : (
+        ""
+      )}
     </div>
   );
 }

@@ -37,6 +37,16 @@
     margin-right: 20px;
 }
 
+.slider__counter{
+    color: white;
+    position: absolute;
+    bottom: 1rem;
+    width: 100%;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+}
+
 @media screen and (max-width: 960px) {
     .wrapper{
         height: 25%;
