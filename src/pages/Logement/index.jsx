@@ -22,7 +22,7 @@ function Logement() {
     data: logement,
     isLoading,
     error,
-  } = useFetch(`http://localhost:8000/api/logements/${logementId}`);
+  } = useFetch(`http://localhost:8000/logements/${logementId}`);
 
   if (isLoading) return <h1>LOADING...</h1>;
 

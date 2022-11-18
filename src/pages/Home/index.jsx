@@ -17,7 +17,7 @@ function Home() {
     data: logementList,
     isLoading,
     error,
-  } = useFetch(`http://localhost:8000/api/logements`);
+  } = useFetch(`http://localhost:8000/logements`);
 
   if (isLoading) return <h1>LOADING...</h1>;
 
@@ -33,10 +33,10 @@ function Home() {
       <HomeWrap>
         <Logements>
           {logementList.map((logement) => {
-            console.log(logement._id);
+            console.log(logement.id);
             return (
               <CardWrapper key={logement.id}>
-                <Link to={`/logement/${logement._id}`}>
+                <Link to={`/logement/${logement.id}`}>
                   <Card cover={logement.cover} title={logement.title} />
                 </Link>
               </CardWrapper>
