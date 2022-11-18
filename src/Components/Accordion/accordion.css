@@ -58,14 +58,14 @@
     position: relative;
 }
 
-.vector::before{
+/* .vector::before{
     position: absolute;
     transform: rotate(180deg);
     transition: all .2s;
-}
+} */
 
-.active .vector::before{
-    transform: rotate(0deg);
+.active .vector{
+    transform: rotate(180deg);
     /* opacity: 0; */
 }
 
