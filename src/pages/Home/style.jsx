@@ -6,51 +6,51 @@
 //     align-items: center;
 //     justify-items: center;
 // `
-import styled from "styled-components"
-import stData from "../../datas/stData"
+import styled from "styled-components";
+import stData from "../../datas/stData";
 
-
-export const Slogan = stData.slogan
+export const Slogan = stData.slogan;
 
 export const Wrapper = styled.div`
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-`
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 10rem;
+`;
 
 export const HomeWrap = styled.div`
-    display: flex;
-    justify-content: center;
-`
+  display: flex;
+  justify-content: center;
+`;
 
 export const Logements = styled.section`
-    /* display: grid;
+  /* display: grid;
     grid-template-columns: repeat(3, 1fr); */
-    /* column-gap: 50px;
+  /* column-gap: 50px;
     row-gap: 30px; */
-    background: lightgray;
-    /* padding: 50px; */
-    border-radius: 25px;
-    margin-bottom: 40px;
-    width: 1240px;
-    align-items: center;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+  background: lightgray;
+  /* padding: 50px; */
+  border-radius: 25px;
+  margin-bottom: 40px;
+  width: 1240px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 
-    @media screen and (max-width: 960px){
-        flex-direction: column;
-        width: 100%;
-    }
-`
+  @media screen and (max-width: 960px) {
+    flex-direction: column;
+    width: 100%;
+  }
+`;
 
 export const CardWrapper = styled.article`
-    padding: 25px;
-    &:hover{
-        transform: scale(1.05);
-    }
-    @media screen and (max-width: 960px){
-        padding: 0;
-    }
-`
+  padding: 25px;
+  &:hover {
+    transform: scale(1.05);
+  }
+  @media screen and (max-width: 960px) {
+    padding: 0;
+  }
+`;

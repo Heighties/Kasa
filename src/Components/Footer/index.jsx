@@ -1,10 +1,9 @@
-import React from 'react'
-import LOGO from '../../assets/LOGO2.png'
-import styled from 'styled-components'
-
+import React from "react";
+import LOGO from "../../assets/LOGO2.png";
+import styled from "styled-components";
 
 const Container = styled.div`
-  position: relative;
+  position: absolute;
   width: 100%;
   height: 170px;
   background: #000000;
@@ -12,10 +11,10 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   flex-direction: column;
-  @media screen and (max-width: 960px){
-        width: 100%;
-    }
-`
+  @media screen and (max-width: 960px) {
+    width: 100%;
+  }
+`;
 
 const FooterLogo = styled.img`
   /* margin-top: 66px; */
@@ -24,7 +23,7 @@ const FooterLogo = styled.img`
   /* margin-left: 48%; */
   /* align-items: center; */
   align-self: center;
-`
+`;
 
 const Text = styled.p`
   font-family: "Montserrat", sans-serif;
@@ -33,17 +32,17 @@ const Text = styled.p`
   font-size: 16px;
   /* line-height: 142.6%; */
   text-align: center;
-  color: #FFFFFF;
+  color: #ffffff;
   margin-top: 20px;
-`
+`;
 
 function Footer() {
   return (
     <Container>
-        <FooterLogo src={LOGO} />
-        <Text>© 2020 Kasa. All rights reserved</Text>
+      <FooterLogo src={LOGO} />
+      <Text>© 2020 Kasa. All rights reserved</Text>
     </Container>
-  )
+  );
 }
 
-export default Footer
+export default Footer;
