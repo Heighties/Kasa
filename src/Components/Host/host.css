@@ -1,0 +1,29 @@
+.host__wrapper{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.host__name{
+  font-size: 12px;
+  font-weight: 500;
+  margin-right: 10px;
+}
+
+.host__firstname{
+  padding-top: 15.5px;
+  margin: 0;
+  text-align: end;
+  color: #ff6060;
+}
+
+.host__lastname{
+  margin: 0;
+  text-align: end;
+  color: #ff6060;
+}
+
+.host__picture{
+  border-radius: 50%;
+  height: 62px;
+  width: 62px;
+}

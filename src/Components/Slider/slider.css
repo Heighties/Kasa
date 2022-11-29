@@ -1,9 +1,8 @@
-.wrapper{
+.slider__wrapper{
     position: relative;
-    width: 1240px;
 }
 
-.picture{
+.slider__picture{
     width: inherit;
     height: inherit;
     object-fit: cover;
@@ -49,8 +48,11 @@
 }
 
 @media screen and (max-width: 960px) {
-    .wrapper{
-        height: 25%;
-        width: 335px;
+    .slider__active-picture{
+        height: auto;
+    }
+
+    .slider__picture{
+        height: 295px;
     }
   }

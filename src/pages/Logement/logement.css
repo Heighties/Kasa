@@ -1,16 +1,17 @@
 
 
-.logements{
-    /* color: ${colors.primary}; */
+.logements__page{
     color: #FF6060;
-    margin: 0 17.5%;
     display: flex;
     justify-content: center;
     flex-direction: column;
-    /* align-self: center; */
-    /* align-items: center; */
+    align-items: center;
+    width: 100%;
 }
 
+.logements__wrapper{
+    width: 100%;
+}
 
 .content{
     margin-top: 20px;
@@ -27,18 +28,14 @@
 
 h1{
     margin: 0;
-    font-size: 18px;
+    font-size: 26px;
     font-weight: 500;
 }
 
-/* const Location = styled.p`
-  font-size: 14px;
+.logement__location{
   font-weight: 500;
-`; */
-
-p{
-    font-size: 14px;
-    font-weight: 500;
+  color: #FF6060;
+  align-self: flex-start;
 }
 
 
@@ -67,7 +64,6 @@ p{
 
 @media screen and (max-width:960px) {
     .logements{
-        margin: 0;
         align-items: center;
     }
 
@@ -78,7 +74,6 @@ p{
 
     .collapsible{
         flex-direction: column;
-        /* padding-bottom: 2rem; */
     }
 
     .rating__host{

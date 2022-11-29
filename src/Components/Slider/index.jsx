@@ -6,18 +6,6 @@ import arrowLeft from "../../assets/arrowLeft.svg";
 import arrowRight from "../../assets/arrowRight.svg";
 import "./slider.css";
 
-// const ActivePicture = styled.div`
-//     height: 255px;
-//     width: 2px;
-//     transform: scale(1);
-//     transition: transform 300ms;
-// `
-
-// const InactivePicture = styled.div`
-//     transform: scale(1.05);
-//     transition: transform 300ms;
-// `
-
 function Slider({ slides }) {
   const [current, setCurrent] = useState(0);
   const length = slides.length;
@@ -31,7 +19,7 @@ function Slider({ slides }) {
   };
 
   return (
-    <div className="wrapper">
+    <div className="slider__wrapper">
       {slides.map((picture, index) => {
         return (
           <div
@@ -43,12 +31,12 @@ function Slider({ slides }) {
             }
           >
             {index === current && (
-              <img className="picture" alt="" src={picture} />
+              <img className="slider__picture" alt="" src={picture} />
             )}
           </div>
         );
       })}
-      {/* get button if there are more thant one picture */}
+      {/* Afficher fleches si plusieurs images*/}
       {length > 1 ? (
         <>
           <div className="slider__previous" onClick={prevSlide}>

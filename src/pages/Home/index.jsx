@@ -1,16 +1,13 @@
-// import styled from 'styled-components'
 import React from "react";
 
 import Card from "../../Components/Card";
-// import logements from '../../datas/data.json'
 import { Link } from "react-router-dom";
 import Banner from "../../Components/Banner";
 import image from "../../assets/IMG.png";
-// import stData from '../../datas/stData'
 import Error from "../Error";
-import { HomeWrap, Logements, Slogan, CardWrapper, Wrapper } from "./style";
 import { useFetch } from "../../utils/hooks";
-// import "../../__mock__/db.json"
+import stData from "../../datas/stData";
+import "./home.css";
 
 function Home() {
   const {
@@ -25,26 +22,25 @@ function Home() {
     return <Error />;
   }
 
-  console.log(logementList);
+  const Slogan = stData.slogan;
 
   return (
-    <Wrapper>
+    <div className="wrapper">
       <Banner image={image} title={Slogan} className="banner" />
-      <HomeWrap>
-        <Logements>
+      <div className="home__wrap">
+        <section className="logements__section">
           {logementList.map((logement) => {
-            console.log(logement.id);
             return (
-              <CardWrapper key={logement.id}>
+              <article className="card__wrapper" key={logement.id}>
                 <Link to={`/logement/${logement.id}`}>
                   <Card cover={logement.cover} title={logement.title} />
                 </Link>
-              </CardWrapper>
+              </article>
             );
           })}
-        </Logements>
-      </HomeWrap>
-    </Wrapper>
+        </section>
+      </div>
+    </div>
   );
 }
 

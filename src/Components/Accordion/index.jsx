@@ -13,7 +13,6 @@ function Accordion({ title, content }) {
     <div className={`collapse ${active && "active"}`}>
       <div className="collapse__title" onClick={handleToggle}>
         {title}
-        {/* <span className="collapse__icon"></span> */}
         <img className="vector" alt="" src={image} />
       </div>
       <div className="collapse__content">{content}</div>
