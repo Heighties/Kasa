@@ -1,0 +1,9 @@
+.rating__wrapper{
+    display: flex;
+    align-items: center;
+}
+
+.rating__icon{
+    margin-right: 5px;
+    height: 25px;
+}

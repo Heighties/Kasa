@@ -1,0 +1,16 @@
+.tag{
+  background: #FF6060;
+  border-radius: 5px;
+  color: white;
+  padding: 3px 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  /* min-width: 68px; */
+  text-align: center;
+}
+
+.tag__text{
+    margin: 0;
+    font-size: 10px;
+    font-weight: 500;
+}

@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import colors from "../../utils/style/colors";
+import "./tag.css";
 
 const Tag = styled.div`
   background: ${colors.primary};
@@ -11,18 +12,18 @@ const Tag = styled.div`
   margin-bottom: 10px;
   /* min-width: 68px; */
   text-align: center;
-`
+`;
 const Text = styled.p`
-    margin: 0;
-    font-size: 10px;
-    font-weight: 500;
-`
+  margin: 0;
+  font-size: 10px;
+  font-weight: 500;
+`;
 
 const Tags = ({ getTag }) => {
   return (
-    <Tag>
-      <Text>{getTag}</Text>
-    </Tag>
+    <div className="tag">
+      <p className="tag__text">{getTag}</p>
+    </div>
   );
 };
 
