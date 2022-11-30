@@ -1,5 +1,6 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
+// import { createRoot } from "react-dom/client";
 import Home from "./pages/Home";
 import Logement from "./pages/Logement";
 import Header from "./Components/Header";

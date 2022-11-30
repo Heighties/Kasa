@@ -36,7 +36,7 @@ function Logement() {
             <h1>{logement.title}</h1>
             <p className="logement__location">{logement.location}</p>
             <div className="tags__wrapper">
-              {logement.tags.map((tag, index) => (
+              {logement.tags?.map((tag, index) => (
                 <Tags key={index} getTag={tag} />
               ))}
             </div>
